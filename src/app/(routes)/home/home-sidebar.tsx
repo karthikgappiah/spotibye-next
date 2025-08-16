@@ -3,18 +3,26 @@ import {
   SidebarContent,
   SidebarFooter,
   SidebarGroup,
-  SidebarHeader
+  SidebarGroupContent,
+  SidebarGroupLabel,
+  SidebarHeader,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem
 } from "@/app/_components/ui/sidebar";
+import { ServiceToggle } from "./service-toggle";
+import { SearchForm } from "./search-form";
 
 export function HomeSidebar() {
   return (
     <Sidebar>
-      <SidebarHeader />
-      <SidebarContent>
-        <SidebarGroup />
-        <SidebarGroup />
-      </SidebarContent>
-      <SidebarFooter />
+      <SidebarHeader>
+        <ServiceToggle
+          services={["Spotify", "Apple", "YouTube"]}
+          defaultService={"Spotify"}
+        />
+        <SearchForm />
+      </SidebarHeader>
     </Sidebar>
   );
 }
